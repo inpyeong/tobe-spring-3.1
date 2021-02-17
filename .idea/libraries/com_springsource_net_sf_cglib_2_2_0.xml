@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="com.springsource.net.sf.cglib-2.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/com.springsource.net.sf.cglib-2.2.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.asm-3.1.2.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.beans-3.1.2.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.context-3.1.2.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.core-3.1.2.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.expression-3.1.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
