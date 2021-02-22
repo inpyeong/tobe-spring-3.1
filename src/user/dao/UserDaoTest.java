@@ -3,31 +3,47 @@ package user.dao;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import user.domain.User;
 
+import javax.sql.DataSource;
 import java.sql.SQLException;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations="/test-applicationContext.xml")
 public class UserDaoTest {
+    @Autowired
+    private ApplicationContext context;
+
+    // UserDao 타입 빈을 직접 DI 받는다.
+    @Autowired
     private UserDao dao;
+
     private User user1;
     private User user2;
     private User user3;
 
     @Before
     public void setUp() {
-        ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
-        dao = context.getBean("userDao", UserDao.class);
+        System.out.println(this.context);
+        System.out.println(this);
+//        this.dao = this.context.getBean("userDao", UserDao.class);
 
-        user1 = new User("whiteship", "백기선", "married");
-        user2 = new User("gyumee", "박성철", "springno1");
-        user3 = new User("bumjin", "박범진", "springno3");
+        this.user1 = new User("whiteship", "백기선", "married");
+        this.user2 = new User("gyumee", "박성철", "springno1");
+        this.user3 = new User("bumjin", "박범진", "springno3");
     }
 
     public static void main(String[] args) {
