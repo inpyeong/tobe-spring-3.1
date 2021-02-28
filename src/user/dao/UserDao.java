@@ -10,12 +10,11 @@ public class UserDao {
     private DataSource dataSource;
     private JdbcContext jdbcContext;
 
-    public void setDataSource(DataSource connectionMaker) {
+    public void setDataSource(DataSource dataSource) {
         this.jdbcContext = new JdbcContext();
-        this.dataSource = connectionMaker;
+        this.dataSource = dataSource;
         this.jdbcContext.setDataSource(dataSource);
     }
-
 
     public void add(final User user) throws ClassNotFoundException, SQLException {
         this.jdbcContext.workWithStatementStrategy(new StatementStrategy() {
@@ -57,12 +56,7 @@ public class UserDao {
     }
 
     public void deleteAll() throws SQLException {
-        this.jdbcContext.workWithStatementStrategy(new StatementStrategy() {
-            @Override
-            public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
-                return c.prepareStatement("delete from users");
-            }
-        });
+        this.jdbcContext.executeSql("delete from users");
     }
 
     public int getCount() throws SQLException {
