@@ -73,6 +73,7 @@ public class Calculator {
                 return value * Integer.valueOf(line);
             }
         };
+//        LineCallback<Integer> multiplyCallback = (line, value) -> value * Integer.valueOf(line);
         return lineReadTemplate(filepath, multiplyCallback, 1);
     }
 
