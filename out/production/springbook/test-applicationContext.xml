@@ -9,7 +9,19 @@
         <property name="password" value="0824" />
     </bean>
 
-    <bean id="userDao" class="user.dao.UserDao">
+    <bean id="userService" class="user.service.UserService">
+        <property name="userDao" ref="userDao" />
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="mailSender" ref="mailSender" />
+    </bean>
+
+    <bean id="mailSender" class="user.service.DummyMailSender" />
+
+    <bean id="userDao" class="user.dao.UserDaoJdbc">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
 </beans>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.springsource.javax.activation-1.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/com.springsource.javax.activation-1.1.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/com.springsource.javax.mail-1.4.0.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/Files/toby/Vol1-31/Libs/lib/org.springframework.context.support-3.1.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
